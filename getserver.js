@@ -1,10 +1,12 @@
 var http = require('http');
 var url = require('url');
+var qstring = require('querystring');
 
 http.createServer(function(req, res){
   console.log(req.url);
-  var stuff = url.parse(req.url);
-  console.log(stuff, true, false);
+  var stuff = qstring.parse(req.url);
+
+  console.log(stuff);
   res.setHeader('Content-Type', 'text/html');
   res.writeHead(200);
   res.write('<html><head><title>Simple GET Server</title></head>');
