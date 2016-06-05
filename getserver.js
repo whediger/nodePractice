@@ -1,5 +1,5 @@
 
-
+var Nprime = require('nprime');
 
 var http = require('http');
 var url = require('url');
@@ -16,7 +16,8 @@ http.createServer(function(req, res){
   res.write('<body>');
   res.write('<h2>did you say ' + stuff.number + '?');
 
-
+  var result = Nprime.test(7);
+  console.log(result);
 
   res.write('<h2>the number ' + stuff.number + ' is ');
   res.write('<h1>Counting from 0 to 100');

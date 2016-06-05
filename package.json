@@ -1,4 +1,7 @@
 {
   "name": "prime-number-page",
   "version": "1.0.0",
+  "dependencies": {
+    "nprime": "^0.1.2"
+  }
 }
