@@ -12,6 +12,7 @@ var qstring = require('querystring');
 http.createServer(function(req, res){
   console.log(req.url);
   var stuff = qstring.parse(req.url);
+
   var numberIn = stuff.number;
   console.log(numberIn);
   res.setHeader('Content-Type', 'text/html');
@@ -21,10 +22,10 @@ http.createServer(function(req, res){
   res.write('<h2>did you say ' + numberIn + '?');
 
   var result = Nprime.test(numberIn);
-  var prevPrime = Nprime.prev(numberIn)
-  var nextPrime = Nprime.next(numberIn);
+  //var prevPrime = Nprime.prev(numberIn)
+  //var nextPrime = Nprime.next(numberIn);
   console.log(result);
-  console.log(nextPrime);
+  //console.log(nextPrime);
 
   if ( result === -1 ) {
     result = "a prime"
@@ -32,11 +33,11 @@ http.createServer(function(req, res){
     result = "not a prime"
   }
   res.write('<h2>the number ' + numberIn + ' is ' + result + '</h2>');
-  res.write('<h2>the previous prime was ' + prevPrime + '</h2>');
-  res.write('<h2>the next prime is ' + nextPrime + '</h2>');
-  res.write('<h1>Counting from 0 to 100');
-  for ( i = 0; i < 101; i++ ){
-  res.write('<p>' + i + '</p>');
-  }
+  //res.write('<h2>the previous prime was ' + prevPrime + '</h2>');
+  //res.write('<h2>the next prime is ' + nextPrime + '</h2>');
+  // res.write('<h1>Counting from 0 to 100');
+  // for ( i = 0; i < 101; i++ ){
+  // res.write('<p>' + i + '</p>');
+  // }
   res.end('\n</body></html>');
 }).listen(8080);
