@@ -19,7 +19,7 @@ http.createServer(function(req, res){
   res.writeHead(200);
   res.write('<html><head><title>Simple GET Server</title></head>');
   res.write('<body>');
-  res.write('<h2>did you say ' + numberIn + '?');
+  res.write('<h2>What is the highest prime number you can guess?');
 
   var result = Nprime.test(numberIn);
   //var prevPrime = Nprime.prev(numberIn)
