@@ -1,11 +1,12 @@
 var http = require('http');
 var url = require('url');
 
-
 http.createServer(function(req, res){
+  console.log(req.url);
+  var stuff = url.parse(req.url);
+  console.log(stuff, true, false);
   res.setHeader('Content-Type', 'text/html');
   res.writeHead(200);
-  console.log(url.parse());
   res.write('<html><head><title>Simple GET Server</title></head>');
   res.write('<body>');
   res.write('<h1>Counting from 0 to 100');
